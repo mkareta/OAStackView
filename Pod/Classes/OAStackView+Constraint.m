@@ -10,9 +10,20 @@
 
 @implementation OAStackView (Constraint)
 
++ (NSLayoutConstraint *)constraintWithIdentifier:(NSString *)identifier inView:(UIView *)view {
+  NSLayoutConstraint *result = nil;
+  for (NSLayoutConstraint *constraint in view.constraints) {
+    if ([constraint.identifier isEqualToString:identifier]) {
+      result = constraint;
+      break;
+    }
+  }
+  return result;
+}
+
 - (NSArray*)constraintsBetweenView:(UIView*)firstView andView:(UIView*)otherView
                             inAxis:(UILayoutConstraintAxis)axis includeReversed:(BOOL)includeReversed {
-  NSMutableArray *arr = [@[] mutableCopy];
+  NSMutableArray *arr = [NSMutableArray new];
   
   for (NSLayoutConstraint *constraint in self.constraints) {
     BOOL viewMatches = (firstView == constraint.firstItem && otherView == constraint.secondItem);
@@ -45,7 +56,7 @@
     return nil;
   }
   
-  NSMutableArray *arr = [@[] mutableCopy];
+  NSMutableArray *arr = [NSMutableArray new];
   
   for (NSLayoutConstraint *constraint in self.constraints) {
     BOOL isBetweenViews = [self isConstraint:constraint betweenView:superView andView:childView];

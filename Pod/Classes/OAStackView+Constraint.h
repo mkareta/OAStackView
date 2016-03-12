@@ -6,9 +6,11 @@
 //
 //
 
-#import "OAStackView.h"
+#import <OAStackView/OAStackView.h>
 
 @interface OAStackView (Constraint)
+
++ (NSLayoutConstraint *)constraintWithIdentifier:(NSString *)identifier inView:(UIView *)view;
 
 - (NSArray*)constraintsAffectingView:(UIView*)view;
 - (NSArray*)constraintsAffectingView:(UIView*)view inAxis:(UILayoutConstraintAxis)axis;
