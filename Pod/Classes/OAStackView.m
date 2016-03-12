@@ -23,7 +23,7 @@
 - (void)oa_setHidden:(BOOL)hidden;
 - (void)oa_original_setHidden:(BOOL)hidden;
 
-+ (void)_setupAnimationWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 animations:(id /* block */)arg6 start:(id /* block */)arg7 animationStateGenerator:(id /* block */)arg8 completion:(id /* block */)arg9;
+//+ (void)_setupAnimationWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 animations:(id /* block */)arg6 start:(id /* block */)arg7 animationStateGenerator:(id /* block */)arg8 completion:(id /* block */)arg9;
 
 + (void)oa_setupAnimationWithArg1:(double)arg1 arg2:(double)arg2 arg3:(id)arg3 arg4:(unsigned int)arg4 arg5:(id)arg5 arg6:(void (^)(void))arg6 arg7:(id)arg7 arg8:(id)arg8 completion:(void (^)(BOOL arg))completion;
 + (void)oa_original_setupAnimationWithArg1:(double)arg1 arg2:(double)arg2 arg3:(id)arg3 arg4:(unsigned int)arg4 arg5:(id)arg5 arg6:(void (^)(void))arg6 arg7:(id)arg7 arg8:(id)arg8 completion:(void (^)(BOOL arg))completion;
@@ -534,7 +534,7 @@ static NSMutableArray *animationTimeStack = nil;
 }
 
 - (BOOL)oa_original_isHidden {
-  
+  return YES;
 }
 
 + (void)oa_setupAnimationWithArg1:(double)arg1 arg2:(double)arg2 arg3:(id)arg3 arg4:(unsigned int)arg4 arg5:(id)arg5 arg6:(void (^)(void))arg6 arg7:(id)arg7 arg8:(id)arg8 completion:(void (^)(BOOL arg))completion {

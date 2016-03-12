@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/oarrabi/OAStackView"
   s.license          = 'MIT'
   s.author           = { "Omar Abdelhafith" => "o.arrabi@me.com" }
-  s.source           = { :git => "https://github.com/mkareta/OAStackView", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/mkareta/OAStackView.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
